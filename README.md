@@ -1,8 +1,10 @@
 Exatrack NTFS crash p0c
 
+MFT $Extend (11) -> IndexRoot.DirectoryIndex.EntriesOffset set to 0xD0 on an old Windows 7 NTFS partition. A Windows 10 system will try to add entries (0x146 bytes over 0x1D0 are consumed, this will cause a relocation, which will cause the overflow).
+
 Just mount the VHD on a win10 system. You can also copy it to a removable drive.
 
-**You definitely don't want to run this on your host machine, use a VM (no BSOD might cause corrupted system in some cases).**
+**You definitely don't want to run this on your host machine : no BSOD might cause corrupted system in some cases, maybe related to other NTFS kernel objects corruption.**
 
 Original advisory :
 - https://twitter.com/ExaTrack/status/1186554050629779456 
